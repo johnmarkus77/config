@@ -6,7 +6,6 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   keys = {
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
-    { "<leader>z", "<cmd>NvimTreeFocus<cr>", desc = "Focus" },
   },
   config = function()
     local function on_attach(bufnr)

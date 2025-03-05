@@ -7,14 +7,14 @@ return {
   opts = {
     bigfile = { enabled = true },
     dashboard = { enabled = false },
-    indent = { enabled = true },
+    indent = { enabled = false },
     input = { enabled = true },
     notifier = {
-      enabled = true,
+      enabled = false,
       timeout = 3000,
     },
     quickfile = { enabled = true },
-    scroll = { enabled = true },
+    scroll = { enabled = false },
     statuscolumn = { enabled = true },
     words = { enabled = true },
     styles = {
@@ -29,7 +29,7 @@ return {
     { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
     { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
     { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
-    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
+    -- { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
     { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse" },
     { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },

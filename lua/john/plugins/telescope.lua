@@ -25,8 +25,8 @@ return {
             local telescope = require('telescope')
 
             telescope.setup {
-                file_ignore_patterns = { "%.git/." },
                 defaults = {
+                    file_ignore_patterns = { "%.git/.", "node_modules", },
                     previewer = false,
                     -- hidden = true,
                     prompt_prefix = "   ",

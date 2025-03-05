@@ -46,7 +46,6 @@ local function smart_dd()
         return "dd"
     end
 end
-
 -- Set up the keymapping
 vim.keymap.set('n', 'dd', smart_dd, { expr = true })
 

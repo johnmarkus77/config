@@ -21,7 +21,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Redo Map
 vim.keymap.set("n", "U", "<C-R>", { desc = "Redo last change" })
-
 -- UndoTree
 vim.keymap.set('n', '<leader>ut', vim.cmd.UndotreeToggle)
 
@@ -31,13 +30,9 @@ vim.keymap.set("n", "<leader>w", ":write!<CR>", opts)
 -- Copy all
 vim.keymap.set('n', '<leader>cc', 'ggVG', opts);
 
---vim.keymap.set("n", ":", "<cmd>Telescope resume<cr>", opts)
 
--- Move windows
-
-
-vim.keymap.set("n", "\\", ":split<CR>", { desc = "Open new split horizontally", silent = true })
-vim.keymap.set("n", "|", ":vsplit<CR>", { desc = "Open new split vertically", silent = true })
+-- vim.keymap.set("n", "?", ":split<CR>", { desc = "Open new split horizontally", silent = true })
+vim.keymap.set("n", "?", ":vsplit<CR>", { desc = "Open new split vertically", silent = true })
 
 -- Better indenting in visual mode
 vim.keymap.set("v", "<", "<gv")
@@ -46,6 +41,9 @@ vim.keymap.set("v", ">", ">gv")
 -- Clear /search highlight
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<CR>', { noremap = true, silent = true });
 
+-- Pane movement
+vim.api.nvim_set_keymap('n', '<Left>', '<C-w>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Right>', '<C-w>l', { noremap = true, silent = true })
 
 -- Terminal window navigation key mappings
 vim.api.nvim_set_keymap('t', '<C-n>', '<C-\\><C-n>', { noremap = true, silent = true })
@@ -54,12 +52,10 @@ vim.api.nvim_set_keymap('t', '<C-j>', '<C-\\><C-N><C-w>j', {noremap = true})
 vim.api.nvim_set_keymap('t', '<C-k>', '<C-\\><C-N><C-w>k', {noremap = true})
 vim.api.nvim_set_keymap('t', '<C-l>', '<C-\\><C-N><C-w>l', {noremap = true})
 
-
+--
 -- Copy to system clipboar
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap = true})
 vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true })
-
--- Reformat
 vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true })
 
 vim.api.nvim_set_keymap('n', ':', ';', { noremap = true })
@@ -68,18 +64,17 @@ vim.api.nvim_set_keymap('x', ':', ';', { noremap = true })
 vim.api.nvim_set_keymap('x', ';', ':', { noremap = true })
 
 -- Use delete key to switch between last buffers quckly.
-vim.keymap.set("n", "<BS>", ":b#<CR>", { silent=true })
-vim.keymap.set("n", "<leader>x", ":bd<CR>", { silent=true })
+vim.api.nvim_set_keymap('n', '<BS>', ':b#<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "_", ":vertical resize -5<CR>")
-vim.keymap.set("n", "+", ":vertical resize +5<CR>")
+-- vim.keymap.set("n", "_", ":vertical resize -5<CR>")
+-- vim.keymap.set("n", "+", ":vertical resize +5<CR>")
 --vim.keymap.set("n", "=", ":resize +5<CR>")
 --vim.keymap.set("n", "-", ":resize -5<CR>")
 local opts = { noremap = true, silent = true }
 
 -- Navigate buffers
-vim.keymap.set("n", "<Right>", ":bnext<CR>", opts)
-vim.keymap.set("n", "<Left>", ":bprevious<CR>", opts)
+-- vim.keymap.set("n", "<Right>", ":bnext<CR>", opts)
+-- vim.keymap.set("n", "<Left>", ":bprevious<CR>", opts)
 -- local keymap = vim.keymap -- for conciseness
 
 -- keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
